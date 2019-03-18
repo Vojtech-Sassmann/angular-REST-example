@@ -22,3 +22,42 @@ git clone git@github.com:Vojtech-Sassmann/angular-REST-example.git /
 git clone https://github.com/Vojtech-Sassmann/angular-REST-example.git
 ```
 
+## Step 1 
+```
+git checkout step1
+```
+
+### Create new angular project
+```
+ng new gui --routing=true --minimal=true --skipGit=true --style=sass
+cd gui
+npm install --save bootstrap
+```
+
+### Edit the angular.json file
+```
+{
+  ...
+  "projects": {
+    "gui": {
+      ...
+      "architect": {
+        "build": {
+           ...
+          "options": {
+              ...
+            ],
+            "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/styles.css"
+            ],
+            ...
+          },
+        ...
+```
+
+### Start GUI app
+```
+cd gui
+ng serve -o
+```
