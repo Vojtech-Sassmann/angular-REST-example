@@ -61,3 +61,36 @@ npm install --save bootstrap
 cd gui
 ng serve -o
 ```
+
+## Step 2
+```
+git checkout step2
+```
+
+### Create new component
+
+```
+ng generate component InstancesOverview 
+```
+or 
+```
+ng g c InstancesOverview
+```
+
+## Field with instances
+```
+instances : PerunInstance[] = [
+    {
+      id : 1,
+      version : "3.4.5",
+      owner : "Vojtech Sassmann",
+      url : "perun.cesnet.cz"
+    },
+    {
+      id : 2,
+      version : "3.2.5",
+      owner : "Martin Kuba",
+      url : "perun-dev.cesnet.cz"
+    }
+  ];
+```

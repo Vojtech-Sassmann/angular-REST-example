@@ -1,0 +1,29 @@
+<div class="mt-3">
+  <h2>{{title}}</h2>
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">url</th>
+        <th scope="col">owner</th>
+        <th scope="col">version</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let instance of instances">
+        <td>
+          {{instance.id}}
+        </td>
+        <td>
+          {{instance.url}}
+        </td>
+        <td>
+          {{instance.owner}}
+        </td>
+        <td>
+          {{instance.version}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
