@@ -94,3 +94,10 @@ instances : PerunInstance[] = [
     }
   ];
 ```
+
+## Step 3
+
+### Create home component
+```
+ng g c Home
+```

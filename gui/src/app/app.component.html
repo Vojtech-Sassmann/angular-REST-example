@@ -1,6 +1,6 @@
 <nav class="navbar bg-primary navbar-dark">
-  <a class="navbar-brand" href="#">Sprava Perunich instanci</a>
+  <a class="navbar-brand" [routerLink]="['/']">Sprava Perunich instanci</a>
 </nav>
 <div class="container">
-  <app-instances-overview></app-instances-overview>
+  <router-outlet></router-outlet>
 </div>
