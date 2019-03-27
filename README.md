@@ -101,3 +101,53 @@ instances : PerunInstance[] = [
 ```
 ng g c Home
 ```
+
+## Step 4
+
+### Add form to instance overview 
+```
+<div class="form-group">
+<label for="ownerInput">Owner</label>
+<input
+  type="text"
+  class="form-control"
+  id="ownerInput"
+  placeholder="Enter owner">
+
+<label for="urlInput">Url</label>
+<input
+  type="url"
+  class="form-control"
+  id="urlInput"
+  placeholder="Enter url">
+
+<label for="versionInput">Version</label>
+<input
+  type="text"
+  class="form-control"
+  id="versionInput"
+  placeholder="Enter version">
+</div>
+```
+
+### Import FormsModule and HttpClientModule in AppModule
+```
+import { FormsModule } from "@angular/forms";
+
+@NgModule({
+...
+  imports: [
+    FormsModule,
+    HttpClientModule
+    ...
+  ],
+...
+})
+export class AppModule { }
+```
+
+### Create service
+
+```
+ng g s Instances
+```

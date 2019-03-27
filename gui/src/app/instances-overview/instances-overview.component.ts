@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PerunInstance} from "../PerunInstance";
+import {InstancesService} from "../instances.service";
 
 @Component({
   selector: 'app-instances-overview',
@@ -8,25 +9,31 @@ import {PerunInstance} from "../PerunInstance";
 })
 export class InstancesOverviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private instancesService : InstancesService) { }
 
   title = 'Prehled instanci';
 
-  instances : PerunInstance[] = [
-    {
-      id : 1,
-      version : "3.4.5",
-      owner : "Vojtech Sassmann",
-      url : "perun.cesnet.cz"
-    },
-    {
-      id : 2,
-      version : "3.2.5",
-      owner : "Martin Kuba",
-      url : "perun-dev.cesnet.cz"
-    }
-  ];
+  newInstanceOwner = "";
+  newInstanceUrl = "";
+  newInstanceVersion = "";
+
+  instances : PerunInstance[] = [];
 
   ngOnInit() {
+    this.instancesService.getInstances().subscribe(instances => this.instances = instances);
+  }
+
+  addInstance() {
+    let newInstance : PerunInstance = {
+      id: null,
+      owner: this.newInstanceOwner,
+      url: this.newInstanceUrl,
+      version: this.newInstanceVersion
+    };
+
+    this.instancesService.addInstance(newInstance).subscribe(response => {
+      console.log(response);
+      this.ngOnInit();
+    });
   }
 }

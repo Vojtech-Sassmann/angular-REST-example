@@ -26,4 +26,37 @@
       </tr>
     </tbody>
   </table>
+  <hr>
+  <h2>Add new instance</h2>
+  <div class="form-group">
+    <label for="ownerInput">Owner</label>
+    <input
+      type="text"
+      class="form-control"
+      id="ownerInput"
+      placeholder="Enter owner"
+      [(ngModel)]="newInstanceOwner">
+
+    <label for="urlInput">Url</label>
+    <input
+      type="url"
+      class="form-control"
+      id="urlInput"
+      placeholder="Enter url"
+      [(ngModel)]="newInstanceUrl">
+
+    <label for="versionInput">Version</label>
+    <input
+      type="text"
+      class="form-control"
+      id="versionInput"
+      placeholder="Enter version"
+      [(ngModel)]="newInstanceVersion">
+  </div>
+  <button
+    class="btn btn-primary"
+    type="button"
+    (click)="addInstance()">
+    Add instance
+  </button>
 </div>
