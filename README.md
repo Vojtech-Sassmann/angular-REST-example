@@ -29,7 +29,7 @@ git checkout step1
 
 ### Create new angular project
 ```
-ng new gui --routing=true --minimal=true --skipGit=true --style=sass
+ng new gui --routing=true --minimal=true --skipGit=true --style=scss
 cd gui
 npm install --save bootstrap
 ```
